@@ -46,7 +46,7 @@
         if(item.valueInDollars > 50) worthItemCount++;
     }
     
-    return section == 0 ? worthItemCount : [allItems count] - worthItemCount;
+    return (section == 0 ? worthItemCount : [allItems count] - worthItemCount) +1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -56,9 +56,12 @@
     
     BNRItemStore *store  = [BNRItemStore sharedStore];
     NSArray *items = indexPath.section == 0 ? [store worthItems] : [store unworthItems];
-    BNRItem *item = items[indexPath.row];
-    
-    cell.textLabel.text = [item description];
+    if (indexPath.row == items.count) {
+       cell.textLabel.text = @"No more items!";
+    } else {
+        BNRItem *item = items[indexPath.row];
+        cell.textLabel.text = [item description];
+    }
     
     return cell;
 }
