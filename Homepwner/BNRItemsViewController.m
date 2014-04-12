@@ -61,6 +61,9 @@
     } else {
         BNRItem *item = items[indexPath.row];
         cell.textLabel.text = [item description];
+        cell.textLabel.backgroundColor = [UIColor clearColor];
+        [cell.textLabel setFont:[UIFont systemFontOfSize:20]];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tableBackground"]];
     }
     
     return cell;
@@ -74,6 +77,13 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return section == 0 ? @"> 50$" : @"< 50$";
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BNRItemStore *store  = [BNRItemStore sharedStore];
+    NSArray *items = indexPath.section == 0 ? [store worthItems] : [store unworthItems];
+    return indexPath.row == [items count] ? 44 : 60;
 }
 
 @end
