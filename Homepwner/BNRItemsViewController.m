@@ -125,4 +125,19 @@
     return [[[BNRItemStore sharedStore] allItems] count] != indexPath.row;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[[BNRItemStore sharedStore] allItems] count] != indexPath.row;
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView
+targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+       toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
+{
+    if([[[BNRItemStore sharedStore] allItems] count] == proposedDestinationIndexPath.row) {
+        return [[proposedDestinationIndexPath indexPathByRemovingLastIndex] indexPathByAddingIndex:[proposedDestinationIndexPath indexAtPosition:1] - 1];
+    }
+    return proposedDestinationIndexPath;
+}
+
 @end
