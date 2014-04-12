@@ -45,7 +45,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[BNRItemStore sharedStore] allItems] count];
+    return [[[BNRItemStore sharedStore] allItems] count] + 1;
 }
 
 - (UIView *)headerView
@@ -64,9 +64,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     
     NSArray *items = [[BNRItemStore sharedStore] allItems];
-    BNRItem *item = items[indexPath.row];
     
-    cell.textLabel.text = [item description];
+    if(indexPath.row == [items count]) {
+        cell.textLabel.text = @"No more items!";
+    } else {
+        BNRItem *item = items[indexPath.row];
+        cell.textLabel.text = [item description];
+    }
+    
     
     return cell;
 }
@@ -113,6 +118,11 @@
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return @"Remove";
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[[BNRItemStore sharedStore] allItems] count] != indexPath.row;
 }
 
 @end
