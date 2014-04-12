@@ -38,7 +38,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[BNRItemStore sharedStore] allItems] count];
+    int worthItemCount = 0;
+    
+    NSArray *allItems = [[BNRItemStore sharedStore] allItems];
+    
+    for(BNRItem *item in allItems){
+        if(item.valueInDollars > 50) worthItemCount++;
+    }
+    
+    return section == 0 ? worthItemCount : [allItems count] - worthItemCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -46,12 +54,23 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     
-    NSArray *items = [[BNRItemStore sharedStore] allItems];
+    BNRItemStore *store  = [BNRItemStore sharedStore];
+    NSArray *items = indexPath.section == 0 ? [store worthItems] : [store unworthItems];
     BNRItem *item = items[indexPath.row];
     
     cell.textLabel.text = [item description];
     
     return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return section == 0 ? @"> 50$" : @"< 50$";
 }
 
 @end

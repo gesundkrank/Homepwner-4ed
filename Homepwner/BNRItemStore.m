@@ -49,6 +49,24 @@
     return self.privateItems;
 }
 
+- (NSArray *)worthItems
+{
+    NSMutableArray *worthItems = [[NSMutableArray alloc] init];
+    for(BNRItem *item in self.privateItems){
+        if(item.valueInDollars > 50) [worthItems addObject:item];
+    }
+    return worthItems;
+}
+
+- (NSArray *)unworthItems
+{
+    NSMutableArray *unworthItems = [[NSMutableArray alloc] init];
+    for(BNRItem *item in self.privateItems){
+        if(item.valueInDollars <= 50) [unworthItems addObject:item];
+    }
+    return unworthItems;
+}
+
 - (BNRItem *)createItem
 {
     BNRItem *item = [BNRItem randomItem];
