@@ -9,12 +9,7 @@
 #import "BNRItemsViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
-
-@interface BNRItemsViewController ()
-
-@property (nonatomic, strong) IBOutlet UIView *headerView;
-
-@end
+#import "BNRDetailViewController.h"
 
 @implementation BNRItemsViewController
 
@@ -22,7 +17,14 @@
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"Homepwner";
+        
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                             target:self
+                                                                             action:@selector(addNewItem:)];
+        navItem.rightBarButtonItem = bbi;
+        navItem.leftBarButtonItem = self.editButtonItem;
     }
     return self;
 }
@@ -32,30 +34,36 @@
     return [self init];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] init];
     
-    UIView *header = self.headerView;
-    [self.tableView setTableHeaderView:header];
+    NSArray *items = [[BNRItemStore sharedStore] allItems];
+    BNRItem *selectedItem = items[indexPath.row];
+    
+    detailViewController.item = selectedItem;
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [[[BNRItemStore sharedStore] allItems] count];
-}
-
-- (UIView *)headerView
-{
-    if (!_headerView) {
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
-                                      owner:self
-                                    options:nil];
-    }
-    return _headerView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
