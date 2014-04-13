@@ -51,6 +51,10 @@
         _valueInDollars = value;
         //Set date to current datetime
         _dateCreated = [[NSDate alloc] init];
+        
+        NSUUID *uuid = [[NSUUID alloc] init];
+        NSString *key = [uuid UUIDString];
+        _itemKey = key;
     }
     
     return self;
