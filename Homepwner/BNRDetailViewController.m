@@ -7,6 +7,7 @@
 //
 
 #import "BNRDetailViewController.h"
+#import "BNRDateViewController.h"
 #import "BNRItem.h"
 
 @interface BNRDetailViewController ()
@@ -65,5 +66,12 @@
     [self.serialField resignFirstResponder];
 }
 
+- (IBAction)showChangeDate:(id)sender
+{
+    NSLog(@"Want to change date");
+    BNRDateViewController *dvc = [[BNRDateViewController alloc] init];
+    dvc.item = self.item;
+    [self.navigationController pushViewController:dvc animated:YES];
+}
 
 @end

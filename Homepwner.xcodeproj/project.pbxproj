@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D60FF4C18FAC577008B9735 /* BNRDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D60FF4A18FAC577008B9735 /* BNRDateViewController.m */; };
+		3D60FF4D18FAC577008B9735 /* BNRDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D60FF4B18FAC577008B9735 /* BNRDateViewController.xib */; };
 		3DCEE50F18F97CAE00F38200 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEE50E18F97CAE00F38200 /* Foundation.framework */; };
 		3DCEE51118F97CAE00F38200 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEE51018F97CAE00F38200 /* CoreGraphics.framework */; };
 		3DCEE51318F97CAE00F38200 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEE51218F97CAE00F38200 /* UIKit.framework */; };
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D60FF4918FAC577008B9735 /* BNRDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRDateViewController.h; sourceTree = "<group>"; };
+		3D60FF4A18FAC577008B9735 /* BNRDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRDateViewController.m; sourceTree = "<group>"; };
+		3D60FF4B18FAC577008B9735 /* BNRDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRDateViewController.xib; sourceTree = "<group>"; };
 		3DCEE50B18F97CAE00F38200 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCEE50E18F97CAE00F38200 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DCEE51018F97CAE00F38200 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,6 +142,9 @@
 				3DCEE54918F9C30B00F38200 /* HeaderView.xib */,
 				3DCEE54618F980C800F38200 /* BNRItemStore.h */,
 				3DCEE54718F980C800F38200 /* BNRItemStore.m */,
+				3D60FF4918FAC577008B9735 /* BNRDateViewController.h */,
+				3D60FF4A18FAC577008B9735 /* BNRDateViewController.m */,
+				3D60FF4B18FAC577008B9735 /* BNRDateViewController.xib */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 				3DCEE54A18F9C30B00F38200 /* HeaderView.xib in Resources */,
 				3DCEE51918F97CAE00F38200 /* InfoPlist.strings in Resources */,
 				3DCEE52118F97CAE00F38200 /* Images.xcassets in Resources */,
+				3D60FF4D18FAC577008B9735 /* BNRDateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D60FF4C18FAC577008B9735 /* BNRDateViewController.m in Sources */,
 				3DCEE54E18F9E60C00F38200 /* BNRDetailViewController.m in Sources */,
 				3DCEE54818F980C800F38200 /* BNRItemStore.m in Sources */,
 				3DCEE54218F97EDA00F38200 /* BNRItemsViewController.m in Sources */,
@@ -470,6 +480,7 @@
 				3DCEE53918F97CAF00F38200 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3DCEE53A18F97CAF00F38200 /* Build configuration list for PBXNativeTarget "HomepwnerTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +489,7 @@
 				3DCEE53C18F97CAF00F38200 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
