@@ -58,5 +58,12 @@
     item.serialNumber = self.serialField.text;
     item.valueInDollars = [self.valueField.text intValue];
 }
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.valueField resignFirstResponder];
+    [self.nameField resignFirstResponder];
+    [self.serialField resignFirstResponder];
+}
+
 
 @end
