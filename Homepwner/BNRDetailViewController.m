@@ -101,8 +101,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [textField resignFirstResponder];
     return YES;
 }
+
 - (IBAction)backgroundTapped:(id)sender {
     [self.view endEditing:YES];
+}
+
+- (IBAction)deleteImage:(id)sender {
+    [[BNRImageStore sharedStore] deleteImageForKey:self.item.itemKey];
+    self.imageView.image = nil;
 }
 
 @end

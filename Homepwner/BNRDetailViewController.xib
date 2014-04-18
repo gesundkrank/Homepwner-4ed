@@ -85,6 +85,12 @@
                                 <action selector="takePicture:" destination="-1" id="g15-V4-dJa"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem title="Delete Image" id="KQ7-Gu-Cvz">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="deleteImage:" destination="-1" id="yt7-ba-O6P"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
             </subviews>
