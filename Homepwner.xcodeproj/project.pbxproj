@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D52EF141911BBC30067DA1D /* BNRCameraOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D52EF131911BBC30067DA1D /* BNRCameraOverlayView.m */; };
 		3D60FF5018FAD108008B9735 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D60FF4F18FAD108008B9735 /* BNRImageStore.m */; };
 		3DCEE50F18F97CAE00F38200 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEE50E18F97CAE00F38200 /* Foundation.framework */; };
 		3DCEE51118F97CAE00F38200 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEE51018F97CAE00F38200 /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D52EF121911BBC30067DA1D /* BNRCameraOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRCameraOverlayView.h; sourceTree = "<group>"; };
+		3D52EF131911BBC30067DA1D /* BNRCameraOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRCameraOverlayView.m; sourceTree = "<group>"; };
 		3D60FF4E18FAD108008B9735 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		3D60FF4F18FAD108008B9735 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 		3DCEE50B18F97CAE00F38200 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +140,8 @@
 				3DCEE51518F97CAE00F38200 /* Supporting Files */,
 				3DCEE54018F97EDA00F38200 /* BNRItemsViewController.h */,
 				3DCEE54118F97EDA00F38200 /* BNRItemsViewController.m */,
+				3D52EF121911BBC30067DA1D /* BNRCameraOverlayView.h */,
+				3D52EF131911BBC30067DA1D /* BNRCameraOverlayView.m */,
 				3DCEE54618F980C800F38200 /* BNRItemStore.h */,
 				3DCEE54718F980C800F38200 /* BNRItemStore.m */,
 			);
@@ -270,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DCEE54E18F9E60C00F38200 /* BNRDetailViewController.m in Sources */,
+				3D52EF141911BBC30067DA1D /* BNRCameraOverlayView.m in Sources */,
 				3DCEE54818F980C800F38200 /* BNRItemStore.m in Sources */,
 				3D60FF5018FAD108008B9735 /* BNRImageStore.m in Sources */,
 				3DCEE54218F97EDA00F38200 /* BNRItemsViewController.m in Sources */,
